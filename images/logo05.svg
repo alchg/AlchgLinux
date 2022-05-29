@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="logo05.svg"
+   inkscape:export-filename="/home/user/picture/logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.25"
+     inkscape:cx="170"
+     inkscape:cy="168"
+     inkscape:window-width="1366"
+     inkscape:window-height="721"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="47.937927"
+       y="651.93976"
+       width="699.91425"
+       height="159.98199"
+       id="rect5150" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text5148"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5150);fill:#ffffff;fill-opacity:1;stroke:none" />
+    <rect
+       style="fill:none;stroke-width:0.330385px;-inkscape-stroke:none;stop-color:#000000"
+       id="rect928"
+       width="297"
+       height="210"
+       x="0"
+       y="2.9e-06" />
+    <g
+       id="g13735"
+       transform="matrix(0.46179684,0,0,0.55519246,106.8902,3.0286252)"
+       inkscape:export-filename="/home/user/picture/logo02.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="fill:#3771c8;stroke:none;stroke-width:0.29017px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 90.265276,80.403348 8.4530597,226.93197 58.939666,227.10793 Z"
+         id="path42"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="fill:#3771c8;stroke:none;stroke-width:0.283494px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 8.4530597,226.90592 C 58.565031,155.91437 99.061202,120.8124 204.68435,122.73177 156.74675,131.26389 90.954901,163.3875 58.939666,227.10793 Z"
+         id="path1559"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="fill:#3771c8;stroke:none;stroke-width:0.291219px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 90.549551,80.403873 82.405539,146.527577 -50.85275,0.17596 z"
+         id="path9892"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3466px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.389027"
+       x="53.730446"
+       y="175.40646"
+       id="text29648"
+       transform="scale(0.98533779,1.0148804)"><tspan
+         sodipodi:role="line"
+         id="tspan29646"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3466px;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;fill:#000000;stroke-width:0.389027"
+         x="53.730446"
+         y="175.40646">Alchg Linux</tspan></text>
+  </g>
+</svg>
