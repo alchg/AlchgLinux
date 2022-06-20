@@ -662,56 +662,12 @@ mkdir ./archlive/airootfs/etc/skel/icon/
 until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/icon/menu.png" "http://flat-icon-design.com/f/f_event_52/s128_f_event_52_1nbg.png";do date;echo RETRY;done
 
 mkdir ./archlive/airootfs/etc/skel/wallpaper/
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper01.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper01.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper02.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper02.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper03.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper03.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper04.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper04.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper05.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper05.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper06.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper06.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper07.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper07.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper08.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper08.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper09.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper09.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper10.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper10.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper11.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper11.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper12.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper12.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper13.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper13.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper14.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper14.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper15.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper15.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper16.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper16.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper17.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper17.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper18.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper18.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper19.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper19.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper20.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper20.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper21.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper21.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper22.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper22.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper23.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper23.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper24.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper24.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper25.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper25.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper26.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper26.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper27.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper27.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper28.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper28.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper29.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper29.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper30.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper30.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper31.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper31.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper32.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper32.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper33.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper33.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper34.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper34.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper35.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper35.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper36.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper36.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper37.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper37.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper38.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper38.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper39.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper39.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper40.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper40.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper41.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper41.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper42.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper42.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper43.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper43.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper44.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper44.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper45.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper45.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper46.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper46.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper47.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper47.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper48.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper48.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper49.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper49.jpg";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper50.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper50.jpg";do date;echo RETRY;done
+for i in  {0..50}
+do
+	IDX=0$i
+	NUM=${IDX: -2:2}
+	until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/airootfs/etc/skel/wallpaper/wallpaper$NUM.jpg" "https://raw.githubusercontent.com/alchg/AlchgLinux/main/images/wallpaper/wallpaper$NUM.jpg";do date;echo RETRY;done
+done
 
 
 mkdir ./archlive/airootfs/etc/skel/.config/
