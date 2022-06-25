@@ -64,9 +64,8 @@ bluez
 bluez-utils
 xdotool
 zenity
-fcitx-im
-fcitx-configtool
-fcitx-mozc
+fcitx5-im
+fcitx5-mozc
 lxrandr
 conky
 nitrogen
@@ -312,11 +311,8 @@ fi
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 export LANG=ja_JP.UTF-8
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
 setxkbmap jp &
-fcitx &
+sleep 2 && fcitx5 &
 #xrandr --output Virtual-1 --mode 1366x768 &
 tint2 &
 nitrogen --restore &
@@ -522,6 +518,18 @@ Exec=/home/user/alchg/menu.sh
 Icon=/home/user/icon/menu.png
 
 Terminal=false
+EOF
+
+
+cat >./archlive/airootfs/etc/environment<<"EOF"
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 EOF
 
 
@@ -904,7 +912,7 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
   </item>
   <item label="日本語入力">
     <action name="Execute">
-     <command>fcitx-configtool</command>
+     <command>fcitx5-configtool</command>
     </action>
   </item>
   <item label="タスクバー">
@@ -1999,7 +2007,7 @@ mouse_scroll_down = next_task
 # System tray (notification area)
 systray_padding = 0 0 2
 systray_background_id = 2
-systray_sort = left2right
+systray_sort = right2left
 systray_icon_size = 24
 systray_icon_asb = 100 0 0
 systray_monitor = 1
@@ -2215,7 +2223,7 @@ mouse_scroll_down = next_task
 # System tray (notification area)
 systray_padding = 0 0 2
 systray_background_id = 2
-systray_sort = left2right
+systray_sort = right2left
 systray_icon_size = 24
 systray_icon_asb = 100 0 0
 systray_monitor = 1
