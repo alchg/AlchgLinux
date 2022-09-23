@@ -183,7 +183,6 @@ sed -i '/^)/i\ \ ["/etc/skel/alchg/conky_transparent.sh"]="0:0:755"' ./archlive/
 sed -i '/^)/i\ \ ["/etc/skel/alchg/lxrandr.sh"]="0:0:755"' ./archlive/profiledef.sh
 sed -i '/^)/i\ \ ["/etc/skel/alchg/exec.sh"]="0:0:755"' ./archlive/profiledef.sh
 sed -i '/^)/i\ \ ["/etc/skel/alchg/menu.sh"]="0:0:755"' ./archlive/profiledef.sh
-sed -i '/^)/i\ \ ["/etc/skel/alchg/pipe_menu.sh"]="0:0:755"' ./archlive/profiledef.sh
 
 sed -i "s/ignore/suspend/" ./archlive/airootfs/etc/systemd/logind.conf.d/do-not-suspend.conf
 echo "HandlePowerKey=suspend" >>./archlive/airootfs/etc/systemd/logind.conf.d/do-not-suspend.conf
@@ -420,23 +419,6 @@ xdotool key Super_L
 EOF
 
 
-cat >./archlive/airootfs/etc/skel/alchg/pipe_menu.sh<<"EOF"
-#! /bin/bash
-
-echo "<openbox_pipe_menu>"
-echo "<separator label='/usr/share/applications/'/>"
-
-for FILE in $(ls /usr/share/applications/*.desktop );do
-	NAME=`grep -m 1 Name= $FILE | awk -F "=" '{printf $2 "\n"}'`
-	echo "<item label='$NAME'>"
-	echo "<action name='Execute'>"
-	echo "<execute>gtk-launch `echo $FILE | awk -F "/" 'END{print $NF}'`</execute>"
-	echo "</action>"
-	echo "</item>"
-done
-
-echo "</openbox_pipe_menu>"
-EOF
 
 cat >>./archlive/airootfs/etc/skel/alchg/vivaldi.json<<"EOF"
 {
@@ -919,7 +901,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
 </menu>
 
 <menu id="alchg-menu" label="Alchg">
-  <menu id="desktop-entry-menu" label="全てのアプリケーション（デスクトップエントリ）" execute="/home/user/alchg/pipe_menu.sh"/>
   <item label="ラムディスク最適化">
     <action name="Execute">
       <command>/home/user/alchg/exec.sh /usr/local/sbin/cowspace.sh</command>
@@ -1052,7 +1033,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_en.xml<<"EOF"
 </menu>
 
 <menu id="alchg-menu" label="Alchg">
-  <menu id="desktop-entry-menu" label="All applications (Desktop entries)" execute="/home/user/alchg/pipe_menu.sh"/>
   <item label="Ramdisk Update">
     <action name="Execute">
       <command>/home/user/alchg/exec.sh /usr/local/sbin/cowspace.sh</command>
