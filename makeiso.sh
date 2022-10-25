@@ -104,10 +104,6 @@ sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Co
 sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf
 sed -i s/"#COMPRESSION_OPTIONS=()"/"COMPRESSION_OPTIONS=('-19')"/ ./archlive/airootfs/etc/mkinitcpio.conf
 
-cat >>./archlive/airootfs/etc/locale.gen<<"EOF"
-en_US.UTF-8 UTF-8
-ja_JP.UTF-8 UTF-8
-EOF
 
 cat >./archlive/airootfs/etc/systemd/system/alchg.service<<"EOF"
 [Unit]
@@ -195,6 +191,10 @@ ln -s /usr/lib/systemd/system/alchg.service ./archlive/airootfs/etc/systemd/syst
 # Deprecated
 cat >./archlive/airootfs/root/customize_airootfs.sh<<"EOF"
 #!/bin/bash
+
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' /etc/locale.gen
+locale-gen
 EOF
 
 
