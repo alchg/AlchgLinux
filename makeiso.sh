@@ -22,24 +22,6 @@ set -e
 
 
 
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/PreLoader.efi" "https://blog.hansenpartnership.com/wp-uploads/2013/PreLoader.efi";do date;echo RETRY;done
-until curl -L -Y 10240 -C - --limit-rate 10240K -k -o "./archlive/HashTool.efi" "https://blog.hansenpartnership.com/wp-uploads/2013/HashTool.efi";do date;echo RETRY;done
-
-cat >/tmp/hash<<"EOF"
-45639d23aa5f2a394b03a65fc732acf2  ./archlive/HashTool.efi
-4f7a4f566781869d252a09dc84923a82  ./archlive/PreLoader.efi
-EOF
-
-md5sum -c /tmp/hash
-
-cp /usr/bin/mkarchiso /usr/bin/mkarchiso_mod
-
-sed -i "/efiboot_imgsize=\"\$(du/a \"./PreLoader.efi\" \\\\" /usr/bin/mkarchiso_mod
-sed -i "/efiboot_imgsize=\"\$(du/a \"./HashTool.efi\" \\\\" /usr/bin/mkarchiso_mod
-sed -i "s/::\/EFI\/BOOT\/BOOTx64.EFI/::\/EFI\/BOOT\/loader.efi/" /usr/bin/mkarchiso_mod
-sed -i "/::\/EFI\/BOOT\/loader.efi/a mcopy -n -i \"\${work_dir}\/efiboot.img\" .\/PreLoader.efi ::\/EFI\/BOOT\/BOOTx64.efi" /usr/bin/mkarchiso_mod
-sed -i "/::\/EFI\/BOOT\/loader.efi/a mcopy -n -i \"\${work_dir}\/efiboot.img\" .\/HashTool.efi ::\/EFI\/BOOT\/HashTool.efi" /usr/bin/mkarchiso_mod
-
 
 sed -i "s/'xz' '-Xbcj' 'x86'/'zstd' '-Xcompression-level' '19'/" ./archlive/profiledef.sh
 sed -i "s/'-Xdict-size' '1M'//" ./archlive/profiledef.sh
@@ -2394,7 +2376,7 @@ EOF
 
 mkdir=./archlive/out
 cd ./archlive
-mkarchiso_mod -v ./
+mkarchiso -v ./
 
 
 cd ./out
@@ -2404,7 +2386,6 @@ mv "$ORGNAME" "alchg$FILENAME"
 cd ../
 
 
-mv /usr/bin/mkarchiso_mod ./
 cd ../
 
 find ./archlive/out/
