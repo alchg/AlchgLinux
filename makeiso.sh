@@ -77,28 +77,28 @@ cat >./archlive/airootfs/etc/mkinitcpio.d/linux.preset<<"EOF"
 EOF
 
 sed -i "s/TIMEOUT 150/TIMEOUT 50/" ./archlive/syslinux/archiso_sys.cfg
-sed -i "s/timeout 15/timeout 5/" ./archlive/efiboot/loader/loader.conf
+#sed -i "s/timeout 15/timeout 5/" ./archlive/efiboot/loader/loader.conf
 sed -i "s/timeout=15/timeout=5/" ./archlive/grub/grub.cfg
 
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
-sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
+#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
+#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
+#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
 
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
-sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
+#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
+#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
+#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
 
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/grub/grub.cfg
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/grub/grub.cfg
 
-sed -i "/# Menu entries/a}" ./archlive/grub/grub.cfg
-sed -i "/# Menu entries/a\    initrd /%INSTALL_DIR%/boot/intel-ucode.img /%INSTALL_DIR%/boot/amd-ucode.img /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img" ./archlive/grub/grub.cfg
-sed -i "/# Menu entries/a\    linux /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram" ./archlive/grub/grub.cfg
-sed -i "/# Menu entries/a\    search --no-floppy --set=root --label %ARCHISO_LABEL%" ./archlive/grub/grub.cfg
-sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
-sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/a}" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/a\    initrd /%INSTALL_DIR%/boot/intel-ucode.img /%INSTALL_DIR%/boot/amd-ucode.img /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/a\    linux /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/a\    search --no-floppy --set=root --label %ARCHISO_LABEL%" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
+#sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
 
 
 sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf
