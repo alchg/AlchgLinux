@@ -100,7 +100,6 @@ sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/grub/grub.cfg
 #sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
 #sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
 
-
 sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf
 sed -i s/"#COMPRESSION_OPTIONS=()"/"COMPRESSION_OPTIONS=('-19')"/ ./archlive/airootfs/etc/mkinitcpio.conf
 
@@ -2375,6 +2374,7 @@ conky.config = {
 }
 
 conky.text = [[
+${color grey}${if_existing /run/archiso/copytoram}Running on Copy To RAM${else}${endif}
 ${color grey}CPU:$color${cpubar 4}
 ${if_match ${memperc}==100}${color red}RAM:${membar 4}${else}${if_match ${memperc}<70}${color grey}RAM:${color white}${membar 4}${else}${color #FF7000}RAM:${membar 4}${endif}${endif}
 ${if_match ${fs_used_perc}==100}${color red}FS :${fs_bar 4}${else}${if_match ${fs_used_perc}<90}${color grey}FS :${color white}${fs_bar 4}${else}${color #FF7000}FS :${fs_bar 4}${endif}${endif}
