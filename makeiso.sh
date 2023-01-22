@@ -100,6 +100,8 @@ sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/grub/grub.cfg
 #sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
 #sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
 
+sed -i s/play\ 600\ 988\ 1\ 1319\ 4/play\ 1200\ 1319\ 1/ ./archlive/grub/grub.cfg
+
 sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf
 sed -i s/"#COMPRESSION_OPTIONS=()"/"COMPRESSION_OPTIONS=('-19')"/ ./archlive/airootfs/etc/mkinitcpio.conf
 
