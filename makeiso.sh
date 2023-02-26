@@ -11,6 +11,7 @@ fi
 if [ $(whoami) != "root" ]; then
 echo "require root"
 return 2>/dev/null
+exit
 
 fi
 
