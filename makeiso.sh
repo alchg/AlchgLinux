@@ -94,12 +94,30 @@ sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/syslinux/archiso_sys-li
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/grub/grub.cfg
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/grub/grub.cfg
 
-#sed -i "/# Menu entries/a}" ./archlive/grub/grub.cfg
-#sed -i "/# Menu entries/a\    initrd /%INSTALL_DIR%/boot/intel-ucode.img /%INSTALL_DIR%/boot/amd-ucode.img /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img" ./archlive/grub/grub.cfg
-#sed -i "/# Menu entries/a\    linux /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram" ./archlive/grub/grub.cfg
-#sed -i "/# Menu entries/a\    search --no-floppy --set=root --label %ARCHISO_LABEL%" ./archlive/grub/grub.cfg
-#sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
-#sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
+sed -i /APPEND/s/$/\ copytoram=n/ ./archlive/syslinux/archiso_sys-linux.cfg
+sed -i /vmlinuz/s/$/\ copytoram=n/ ./archlive/grub/grub.cfg
+
+
+cat >>./archlive/syslinux/archiso_sys-linux.cfg<<"EOF"
+
+# Copy to RAM boot option
+LABEL arch64ram
+TEXT HELP
+Boot the Arch Linux install medium on BIOS with Copy-to-RAM option
+It allows you to install Arch Linux or perform system maintenance.
+ENDTEXT
+MENU LABEL Arch Linux install medium (x86_64, BIOS, Copy to RAM)
+LINUX /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts
+INITRD /%INSTALL_DIR%/boot/intel-ucode.img,/%INSTALL_DIR%/boot/amd-ucode.img,/%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img
+APPEND archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram
+EOF
+
+sed -i "/# Menu entries/a}" ./archlive/grub/grub.cfg
+sed -i "/# Menu entries/a\    initrd /%INSTALL_DIR%/boot/intel-ucode.img /%INSTALL_DIR%/boot/amd-ucode.img /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img" ./archlive/grub/grub.cfg
+sed -i "/# Menu entries/a\    linux /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram" ./archlive/grub/grub.cfg
+sed -i "/# Menu entries/a\    search --no-floppy --set=root --label %ARCHISO_LABEL%" ./archlive/grub/grub.cfg
+sed -i "/# Menu entries/a\    set gfxpayload=keep" ./archlive/grub/grub.cfg
+sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Copy to RAM)\" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-copytoram' {" ./archlive/grub/grub.cfg
 
 sed -i s/play\ 600\ 988\ 1\ 1319\ 4/play\ 1200\ 1319\ 1/ ./archlive/grub/grub.cfg
 
@@ -2377,7 +2395,6 @@ conky.config = {
 }
 
 conky.text = [[
-${color grey}${if_existing /run/archiso/copytoram}Running on Copy To RAM${else}${endif}
 ${color grey}CPU:$color${cpubar 4}
 ${if_match ${memperc}==100}${color red}RAM:${membar 4}${else}${if_match ${memperc}<70}${color grey}RAM:${color white}${membar 4}${else}${color #FF7000}RAM:${membar 4}${endif}${endif}
 ${if_match ${fs_used_perc}==100}${color red}FS :${fs_bar 4}${else}${if_match ${fs_used_perc}<90}${color grey}FS :${color white}${fs_bar 4}${else}${color #FF7000}FS :${fs_bar 4}${endif}${endif}
