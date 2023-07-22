@@ -55,8 +55,7 @@ nitrogen
 i3lock
 vi
 qterminal
-vivaldi
-vivaldi-ffmpeg-codecs
+firefox
 netsurf
 vinagre
 virt-viewer
@@ -258,9 +257,6 @@ cp .config/openbox/menu_en.xml .config/openbox/menu.xml
 cp .xinitrc_en .xinitrc
 sed -i 's/time2_format = %B%d日 %A/time2_format = %a\/%d\/%b/' .config/tint2/tint2rc
 fi
-rm -rf ~/.config/vivaldi/
-mkdir -p ~/.config/vivaldi/Default/
-cp ~/alchg/vivaldi.json ~/.config/vivaldi/Default/Preferences
 
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
@@ -430,33 +426,6 @@ cat >./archlive/airootfs/etc/skel/alchg/menu.sh<<"EOF"
 #! /bin/bash
 
 xdotool key Super_L
-EOF
-
-
-
-cat >>./archlive/airootfs/etc/skel/alchg/vivaldi.json<<"EOF"
-{
-  "vivaldi": {
-    "panels": {
-      "show_toggle": true
-    },
-    "status_bar": {
-      "display": 2,
-      "minimized": 1
-    },
-    "tabs": {
-      "cycle_by_recent_order": false
-    },
-    "theme": {
-      "schedule": {
-        "o_s": {
-          "dark": "Vivaldi3x",
-          "light": "Vivaldi3x"
-        }
-      }
-    }
-  }
-}
 EOF
 
 
@@ -889,9 +858,9 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
 </menu>
 
 <menu id="apps-web-browser-menu" label="ウェブブラウザ">
-  <item label="Vivaldi">
+  <item label="Firefox">
     <action name="Execute">
-     <command>vivaldi-stable</command>
+     <command>firefox</command>
     </action>
   </item>
   <item label="NetSurf">
@@ -986,9 +955,9 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="アプリケーション" />
-  <item label="Vivaldi">
+  <item label="Firefox">
     <action name="Execute">
-     <command>vivaldi-stable</command>
+     <command>firefox</command>
     </action>
   </item>
   <menu id="apps-web-browser-menu"/>
@@ -1021,9 +990,9 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_en.xml<<"EOF"
 </menu>
 
 <menu id="apps-web-browser-menu" label="Web Browser">
-  <item label="Vivaldi">
+  <item label="Firefox">
     <action name="Execute">
-     <command>vivaldi-stable</command>
+     <command>firefox</command>
     </action>
   </item>
   <item label="NetSurf">
@@ -1113,9 +1082,9 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_en.xml<<"EOF"
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="Application" />
-  <item label="Vivaldi">
+  <item label="Firefox">
     <action name="Execute">
-     <command>vivaldi-stable</command>
+     <command>firefox</command>
     </action>
   </item>
   <menu id="apps-web-browser-menu"/>
@@ -2056,7 +2025,7 @@ launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = ~/.local/share/applications/open-openbox-menu.desktop
-launcher_item_app = /usr/share/applications/vivaldi-stable.desktop
+launcher_item_app = /usr/share/applications/firefox.desktop
 launcher_item_app = /usr/share/applications/qterminal.desktop
 
 #-------------------------------------
@@ -2272,7 +2241,7 @@ launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = ~/.local/share/applications/open-openbox-menu.desktop
-launcher_item_app = /usr/share/applications/vivaldi-stable.desktop
+launcher_item_app = /usr/share/applications/firefox.desktop
 launcher_item_app = /usr/share/applications/qterminal.desktop
 
 #-------------------------------------
