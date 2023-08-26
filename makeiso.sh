@@ -160,6 +160,11 @@ PWD
 
 EOF
 
+mkdir ./archlive/airootfs/etc/sysctl.d/
+cat >./archlive/airootfs/etc/sysctl.d/99-sysctl.conf<<"EOF"
+vm.overcommit_memory = 1
+EOF
+
 cat >./archlive/airootfs/usr/local/sbin/cowspace.sh<<"EOF"
 #! /bin/bash
 
@@ -2384,12 +2389,11 @@ cd ./out
 ORGNAME=`ls ./`
 FILENAME=`echo ${ORGNAME#arch}`
 mv "$ORGNAME" "alchg$FILENAME"
+sha256sum "alchg$FILENAME" >sha256sum.txt
 cd ../
 
 
 cd ../
 
 find ./archlive/out/
-sha256sum "./archlive/out/alchg$FILENAME"
-
 
