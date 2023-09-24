@@ -69,7 +69,7 @@ cat >./archlive/airootfs/etc/mkinitcpio.d/linux-lts.preset<<"EOF"
 PRESETS=('archiso')
 
 ALL_kver='/boot/vmlinuz-linux-lts'
-ALL_config='/etc/mkinitcpio.conf'
+ALL_config='/etc/mkinitcpio.conf.d/archiso.conf'
 
 archiso_image="/boot/initramfs-linux-lts.img"
 EOF
@@ -120,8 +120,8 @@ sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Co
 
 sed -i s/play\ 600\ 988\ 1\ 1319\ 4/play\ 1200\ 1319\ 1/ ./archlive/grub/grub.cfg
 
-sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf
-sed -i s/"#COMPRESSION_OPTIONS=()"/"COMPRESSION_OPTIONS=('-19')"/ ./archlive/airootfs/etc/mkinitcpio.conf
+sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf.d/archiso.conf
+echo "COMPRESSION_OPTIONS=('-19')" >> ./archlive/airootfs/etc/mkinitcpio.conf.d/archiso.conf
 
 
 cat >./archlive/airootfs/etc/systemd/system/alchg.service<<"EOF"
