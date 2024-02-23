@@ -841,7 +841,7 @@ mkdir ./archlive/airootfs/etc/skel/.config/openbox
 cat >./archlive/airootfs/etc/skel/.config/openbox/autostart<<"EOF"
 (sleep 1s && volumeicon) &
 (sleep 1s && /home/user/alchg/conky.sh) &
-(sleep 1s && conky) &
+(sleep 3s && conky) &
 EOF
 
 cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
