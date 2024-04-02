@@ -160,10 +160,10 @@ PWD
 
 EOF
 
-mkdir ./archlive/airootfs/etc/sysctl.d/
-cat >./archlive/airootfs/etc/sysctl.d/99-sysctl.conf<<"EOF"
-vm.overcommit_memory = 1
-EOF
+#mkdir ./archlive/airootfs/etc/sysctl.d/
+#cat >./archlive/airootfs/etc/sysctl.d/99-sysctl.conf<<"EOF"
+#vm.overcommit_memory = 1
+#EOF
 
 cat >./archlive/airootfs/usr/local/sbin/cowspace.sh<<"EOF"
 #! /bin/bash
