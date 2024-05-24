@@ -645,20 +645,22 @@ cat >./archlive/airootfs/etc/skel/alchg/conky_transparent.sh<<"EOF"
 
 set -e
 
-FILE1=/home/user/.config/conky/conky.conf.skel.details                                                                                                                   
-FILE2=/home/user/.config/conky/conky.conf                                                                                                                                
-                                                                                                                                                                         
-if grep "own_window_transparent = true" $FILE1 ;then                                                                                                                     
-        sed -i "s/own_window_transparent = true/own_window_transparent = false/" $FILE1                                                                                  
-else                                                                                                                                                                     
-        sed -i "s/own_window_transparent = false/own_window_transparent = true/" $FILE1                                                                                  
-fi                                                                                                                                                                       
-                                                                                                                                                                         
-if grep "own_window_transparent = true" $FILE2 ;then                                                                                                                     
-        sed -i "s/own_window_transparent = true/own_window_transparent = false/" $FILE2                                                                                  
-else                                                                                                                                                                     
-        sed -i "s/own_window_transparent = false/own_window_transparent = true/" $FILE2                                                                                  
-fi                                                                                                                                                                       
+FILE1=/home/user/.config/conky/conky.conf.skel.details
+FILE2=/home/user/.config/conky/conky.conf
+
+if grep "own_window_transparent = true" $FILE1 ;then
+        sed -i "s/own_window_transparent = true/own_window_transparent = false/" $FILE1
+else
+        sed -i "s/own_window_transparent = false/own_window_transparent = true/" $FILE1
+fi
+
+sleep 1s
+
+if grep "own_window_transparent = true" $FILE2 ;then
+        sed -i "s/own_window_transparent = true/own_window_transparent = false/" $FILE2
+else
+        sed -i "s/own_window_transparent = false/own_window_transparent = true/" $FILE2
+fi
 
 EOF
 
