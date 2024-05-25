@@ -77,18 +77,28 @@ cat >./archlive/airootfs/etc/mkinitcpio.d/linux.preset<<"EOF"
 EOF
 
 sed -i "s/TIMEOUT 150/TIMEOUT 50/" ./archlive/syslinux/archiso_sys.cfg
-#sed -i "s/timeout 15/timeout 5/" ./archlive/efiboot/loader/loader.conf
+sed -i "s/timeout 15/timeout 5/" ./archlive/efiboot/loader/loader.conf
+sed -i "s/beep on/beep off/" ./archlive/efiboot/loader/loader.conf
 sed -i "s/timeout=15/timeout=5/" ./archlive/grub/grub.cfg
 
+cat >./archlive/efiboot/loader/entries/04-archiso-x86_64-ram-linux.conf<<"EOF"
+title    Arch Linux install medium (x86_64, UEFI, CopyToRAM)
+sort-key 04
+linux    /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts
+initrd   /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img
+options  archisobasedir=%INSTALL_DIR% archisosearchuuid=%ARCHISO_UUID% copytoram=y
+EOF
+
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
+sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
+sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
 #sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
 
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
+sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
+sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
 #sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
+
 
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/grub/grub.cfg
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/grub/grub.cfg
@@ -107,8 +117,8 @@ It allows you to install Arch Linux or perform system maintenance.
 ENDTEXT
 MENU LABEL Arch Linux install medium (x86_64, BIOS, Copy to RAM)
 LINUX /%INSTALL_DIR%/boot/x86_64/vmlinuz-linux-lts
-INITRD /%INSTALL_DIR%/boot/intel-ucode.img,/%INSTALL_DIR%/boot/amd-ucode.img,/%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img
-APPEND archisobasedir=%INSTALL_DIR% archisolabel=%ARCHISO_LABEL% copytoram
+INITRD /%INSTALL_DIR%/boot/x86_64/initramfs-linux-lts.img
+APPEND archisobasedir=%INSTALL_DIR% archisosearchuuid=%ARCHISO_UUID% copytoram=y
 EOF
 
 sed -i "/# Menu entries/a}" ./archlive/grub/grub.cfg
