@@ -162,11 +162,13 @@ cp /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/30-touchpad.
 sed -i '38i        Option "Tapping" "on"' /etc/X11/xorg.conf.d/30-touchpad.conf
 sed -i '39i        Option "ClickMethod" "clickfinger"' /etc/X11/xorg.conf.d/30-touchpad.conf
 
+sed -i s/"utilities-terminal"/"qterminal"/ /usr/share/applications/qterminal.desktop
 
 passwd root<<"PWD"
 root
 root
 PWD
+
 
 EOF
 
