@@ -131,7 +131,7 @@ sed -i "/# Menu entries/amenuentry \"Arch Linux install medium (x86_64, UEFI, Co
 sed -i s/play\ 600\ 988\ 1\ 1319\ 4/play\ 1200\ 1319\ 1/ ./archlive/grub/grub.cfg
 
 sed -i s/"xz"/"zstd"/ ./archlive/airootfs/etc/mkinitcpio.conf.d/archiso.conf
-echo "COMPRESSION_OPTIONS=('-19')" >> ./archlive/airootfs/etc/mkinitcpio.conf.d/archiso.conf
+sed -i s/-9e/-19/ ./archlive/airootfs/etc/mkinitcpio.conf.d/archiso.conf
 
 
 cat >./archlive/airootfs/etc/systemd/system/alchg.service<<"EOF"
