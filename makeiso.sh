@@ -90,14 +90,14 @@ options  archisobasedir=%INSTALL_DIR% archisosearchuuid=%ARCHISO_UUID% copytoram
 EOF
 
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
-#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
+sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-linux.conf
+sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-speech-linux.conf
+#sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-ram-linux.conf
 
 sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/syslinux/archiso_sys-linux.cfg
-sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-x86_64-linux.conf
-sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-x86_64-speech-linux.conf
-#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-x86_64-ram-linux.conf
+sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/01-archiso-linux.conf
+sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/02-archiso-speech-linux.conf
+#sed -i s/initramfs-linux/initramfs-linux-lts/ ./archlive/efiboot/loader/entries/03-archiso-ram-linux.conf
 
 
 sed -i s/vmlinuz-linux/vmlinuz-linux-lts/ ./archlive/grub/grub.cfg
