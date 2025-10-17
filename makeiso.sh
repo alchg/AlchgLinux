@@ -39,7 +39,8 @@ tint2
 network-manager-applet
 xcompmgr
 alsa-utils
-volumeicon
+mate-media
+mate-settings-daemon
 pulseaudio
 pulseaudio-jack
 pulseaudio-bluetooth
@@ -798,35 +799,6 @@ Zoom%20reset=Ctrl+0
 
 EOF
 
-mkdir ./archlive/airootfs/etc/skel/.config/volumeicon/
-cat >./archlive/airootfs/etc/skel/.config/volumeicon/volumeicon<<"EOF"
-[Alsa]
-card=default
-
-[Notification]
-show_notification=true
-notification_type=0
-
-[StatusIcon]
-stepsize=5
-onclick=xterm -e 'alsamixer'
-theme=Default
-use_panel_specific_icons=false
-lmb_slider=true
-mmb_mute=false
-use_horizontal_slider=false
-show_sound_level=false
-use_transparent_background=false
-
-[Hotkeys]
-up_enabled=false
-down_enabled=false
-mute_enabled=false
-up=XF86AudioRaiseVolume
-down=XF86AudioLowerVolume
-mute=XF86AudioMute
-EOF
-
 mkdir ./archlive/airootfs/etc/skel/.config/nitrogen/
 cat >./archlive/airootfs/etc/skel/.config/nitrogen/bg-saved.cfg<<"EOF"
 [xin_-1]
@@ -853,7 +825,7 @@ EOF
 
 mkdir ./archlive/airootfs/etc/skel/.config/openbox
 cat >./archlive/airootfs/etc/skel/.config/openbox/autostart<<"EOF"
-(sleep 1s && volumeicon) &
+(sleep 1s && mate-volume-control-status-icon) &
 (sleep 1s && /home/user/alchg/conky.sh) &
 (sleep 3s && conky) &
 EOF
