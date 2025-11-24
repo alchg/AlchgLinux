@@ -52,7 +52,7 @@ fcitx5-im
 fcitx5-mozc
 lxrandr
 conky
-nitrogen
+feh
 i3lock
 vi
 qterminal
@@ -345,7 +345,7 @@ setxkbmap jp &
 sleep 2 && fcitx5 &
 #xrandr --output Virtual-1 --mode 1366x768 &
 tint2 &
-nitrogen --restore &
+feh --bg-scale wallpaper/wallpaper21.jpg &
 nm-applet &
 xcompmgr &
 exec openbox-session
@@ -410,7 +410,7 @@ fi
 #exec xterm -geometry 80x66+0+0 -name login
 #xrandr --output Virtual-1 --mode 1366x768 &
 tint2 &
-nitrogen --restore &
+feh --bg-scale wallpaper/wallpaper21.jpg &
 nm-applet &
 xcompmgr &
 exec openbox-session
@@ -682,7 +682,7 @@ cat >./archlive/airootfs/etc/skel/alchg/lxrandr.sh<<"EOF"
 
 lxrandr
 echo "" >>/home/user/.config/conky/conky.conf
-nitrogen --restore
+feh --bg-scale wallpaper/wallpaper21.jpg &
 EOF
 
 
@@ -799,29 +799,6 @@ Zoom%20reset=Ctrl+0
 
 EOF
 
-mkdir ./archlive/airootfs/etc/skel/.config/nitrogen/
-cat >./archlive/airootfs/etc/skel/.config/nitrogen/bg-saved.cfg<<"EOF"
-[xin_-1]
-file=/home/user/wallpaper/wallpaper21.jpg
-mode=0
-bgcolor=#000000
-EOF
-
-cat >./archlive/airootfs/etc/skel/.config/nitrogen/nitrogen.cfg<<"EOF"
-[geometry]
-posx=0
-posy=0
-sizex=514
-sizey=500
-
-[nitrogen]
-view=icon
-recurse=true
-sort=alpha
-icon_caps=false
-dirs=
-EOF
-
 
 mkdir ./archlive/airootfs/etc/skel/.config/openbox
 cat >./archlive/airootfs/etc/skel/.config/openbox/autostart<<"EOF"
@@ -891,11 +868,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
   <item label="システムモニタ">
     <action name="Execute">
       <command>conky -c /home/user/.config/conky/conky.conf.skel.details</command>
-    </action>
-  </item>
-  <item label="壁紙">
-    <action name="Execute">
-     <command>nitrogen /home/user/wallpaper/</command>
     </action>
   </item>
   <item label="画面">
@@ -1023,11 +995,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_en.xml<<"EOF"
   <item label="SystemMonitor">
     <action name="Execute">
       <command>conky -c /home/user/.config/conky/conky.conf.skel.details</command>
-    </action>
-  </item>
-  <item label="Wallpaper">
-    <action name="Execute">
-     <command>nitrogen /home/user/wallpaper/</command>
     </action>
   </item>
   <item label="Screen">
