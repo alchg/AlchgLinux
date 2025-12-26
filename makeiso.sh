@@ -58,7 +58,6 @@ vi
 qterminal
 firefox
 netsurf
-vinagre
 virt-viewer
 EOF
 
@@ -839,11 +838,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_jp.xml<<"EOF"
 </menu>
 
 <menu id="apps-remote-menu" label="リモート">
-  <item label="Vinagre">
-    <action name="Execute">
-     <command>vinagre</command>
-    </action>
-  </item>
   <item label="Virt Viewer">
     <action name="Execute">
      <command>remote-viewer</command>
@@ -966,11 +960,6 @@ cat >./archlive/airootfs/etc/skel/.config/openbox/menu_en.xml<<"EOF"
 </menu>
 
 <menu id="apps-remote-menu" label="Remote">
-  <item label="Vinagre">
-    <action name="Execute">
-     <command>vinagre</command>
-    </action>
-  </item>
   <item label="Virt Viewer">
     <action name="Execute">
      <command>remote-viewer</command>
