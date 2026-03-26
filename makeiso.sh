@@ -29,6 +29,7 @@ sed -i "s/'-Xdict-size' '1M'//" ./archlive/profiledef.sh
 
 
 sed -i "s/^linux$//" ./archlive/packages.x86_64
+sed -i "s/^broadcom-wl$//" ./archlive/packages.x86_64
 cat >>./archlive/packages.x86_64<<"EOF"
 linux-lts
 otf-ipafont
