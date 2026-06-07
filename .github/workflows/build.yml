@@ -23,7 +23,7 @@ jobs:
         run: useradd user
         
       - name: Install packages
-        run: pacman -Syyu --noconfirm libisoburn mtools dosfstools squashfs-tools arch-install-scripts grub
+        run: pacman -Syyu --noconfirm libisoburn mtools dosfstools squashfs-tools arch-install-scripts grub gzip
      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
