@@ -23,7 +23,7 @@ jobs:
         run: useradd user
         
       - name: Install packages
-        run: pacman -Syyu --noconfirm libisoburn mtools dosfstools squashfs-tools arch-install-scripts grub gzip
+        run: pacman -Syyu --noconfirm libisoburn mtools dosfstools squashfs-tools arch-install-scripts grub
      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
@@ -42,8 +42,8 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
-            file: archlive/out/${FILE}
-            asset_name: ${FILE}
-            tag: ${TAG}
+            file: archlive/out/$FILE
+            asset_name: $FILE
+            tag: $TAG
             overwrite: true
             body: "Auto Release."
