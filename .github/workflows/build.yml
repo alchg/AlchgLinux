@@ -35,12 +35,15 @@ jobs:
       - name: Tag
         run: TAG=`date '+%Y-%m-%d-%H-%M'`
 
+      - name: File
+        run: FILE=alchglinux-`date '+%Y.%m.%d'`-x86_64.iso
+        
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
-            file: archlive/out/alchglinux-`date '+%Y.%m.%d'`-x86_64.iso
-            asset_name: alchglinux-`date '+%Y.%m.%d'`-x86_64.iso
+            file: archlive/out/${FILE}
+            asset_name: ${FILE}
             tag: ${TAG}
             overwrite: true
             body: "Auto Release."
