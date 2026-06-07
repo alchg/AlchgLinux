@@ -44,7 +44,7 @@ jobs:
             file: archlive/out/${{ env.FILE }}
             tag: ${{ env.TAG }}
             overwrite: true
-            body: "Auto Release."
+            body: "Scheduled update."
 
       - name: Upload sha256sum to release
         uses: svenstaro/upload-release-action@v2
@@ -53,4 +53,4 @@ jobs:
             file: archlive/out/sha256sum.txt
             tag: ${{ env.TAG }}
             overwrite: true
-            body: "Auto Release."
+            body: "Scheduled update."
