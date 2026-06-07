@@ -72,6 +72,7 @@ pv
 memtest86+
 memtest86+-efi
 edk2-shell
+sed
 otf-ipafont
 otf-font-awesome
 fcitx5-im
