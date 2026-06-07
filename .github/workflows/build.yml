@@ -29,11 +29,18 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: build
+      - name: Build
         run: ./build.sh
 
-      - name: Upload ISO
-        uses: actions/upload-artifact@v4
+      - name: Tag
+        run: TAG=`date '+%Y-%m-%d-%H-%M'`
+
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: iso-files
-          path: ./archlive/out/*
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: archlive/out/alchglinux-`date '+%Y.%m.%d'`-x86_64.iso
+            asset_name: alchglinux-`date '+%Y.%m.%d'`-x86_64.iso
+            tag: ${TAG}
+            overwrite: true
+            body: "Auto Release."
