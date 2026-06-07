@@ -82,9 +82,14 @@ pamixer
 networkmanager
 network-manager-applet
 sway
+swaybg
 waybar
+wofi
+wdisplays
 foot
 gvim
+vi
+virt-viewer
 firefox
 )
 
@@ -143,7 +148,6 @@ EOF
 install -d -m 0755 -o 0 -g 0 -- "${rootfs}/home/user/"
 cp -r ../skel/. "${rootfs}/home/user/"
 find "${rootfs}/home/user/" |xargs -I {} chown user {}
-#chown user "${rootfs}/home/user/"
 
 cat >"${rootfs}/etc/locale.conf"<<'EOF'
 LANG=C.UTF-8
@@ -171,13 +175,40 @@ cat >${rootfs}/usr/local/sbin/startup.sh<<'EOF'
 
 localectl set-locale LANG=ja_JP.UTF-8
 timedatectl set-timezone Asia/Tokyo
+timedatectl set-ntp yes
 systemctl start NetworkManager.service
 sed -i s/^#Server/Server/g /etc/pacman.d/mirrorlist
 pacman-key --init
 pacman-key --populate archlinux
+/usr/local/sbin/cowspace.sh
 
 EOF
 chmod +x ${rootfs}/usr/local/sbin/startup.sh
+
+cat >${rootfs}/usr/local/sbin/cowspace.sh<<"EOF"
+#! /bin/bash
+
+MEM=`free --mebi|grep Mem|awk '{print $2}'`
+SWP=`free --mebi|grep Swap|awk '{print $2}'`
+REQ=1850
+SYS=1600
+SFS=0
+
+if [ $MEM -ge $REQ ];then
+        if [ -e /run/archiso/copytoram/airootfs.sfs ];then
+                SFS=`du -m /run/archiso/copytoram/airootfs.sfs |awk '{print $1}'`
+                REQ=`expr $REQ + $SFS`
+
+                if [ $MEM -ge $REQ ];then
+                        mount -o remount,size=`expr $MEM + $SWP - $SYS - $SFS`M /run/archiso/cowspace
+                fi
+        else
+                mount -o remount,size=`expr $MEM + $SWP - $SYS`M /run/archiso/cowspace
+        fi
+fi
+
+EOF
+chmod +x ${rootfs}/usr/local/sbin/cowspace.sh
 
 mkdir -p ${rootfs}/etc/systemd/system/multi-user.target.wants
 ln -s /etc/systemd/system/startup.service ${rootfs}/etc/systemd/system/multi-user.target.wants/startup.service

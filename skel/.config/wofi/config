@@ -1,0 +1,8 @@
+show=drun
+always_parse_args=true
+show_all=false
+insensitive=true
+allow_images=true
+normal_window=false
+allow_markup=true
+prompt=search

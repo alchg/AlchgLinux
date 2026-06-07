@@ -16,12 +16,13 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wmenu-run
+set $menu wofi
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/wallpaper/wallpaper11.jpg fill
 #
 # Example configuration:
 #
@@ -240,8 +241,9 @@ bindsym $mod+r mode "resize"
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 #    }
 #}
+client.focused          #aaaaaa #555555 #ffffff #ffffff #555555
 
 include /etc/sway/config.d/*
 exec fcitx5
 exec nm-applet
-exec_always waybar
+exec waybar
