@@ -41,7 +41,16 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
-            file: archlive/out/*
+            file: archlive/out/${{ env.FILE }}
+            tag: ${{ env.TAG }}
+            overwrite: true
+            body: "Auto Release."
+
+      - name: Upload sha256sum to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: archlive/out/sha256sum.txt
             tag: ${{ env.TAG }}
             overwrite: true
             body: "Auto Release."
