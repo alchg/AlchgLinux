@@ -6,11 +6,11 @@
 
 #custom-firefox,
 #custom-terminal{
-    font-size: 17px;
+    font-size: 18px;
 }
 
 #custom-power {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 window#waybar {

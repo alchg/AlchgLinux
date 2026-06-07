@@ -93,3 +93,7 @@
  #entry:selected #text {
     color: @txt;
  }
+
+ #expander-box {
+    background-color: @bg;
+ }

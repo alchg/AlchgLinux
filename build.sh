@@ -620,8 +620,7 @@ log_info "Create a squashfs."
 install -d -m 0755 -- "${isofs}/${base}/${arch}"
 squashfsimg="${isofs}/${base}/${arch}/airootfs.sfs"
 
-#mksquashfs "${rootfs}" "${squashfsimg}" -noappend -comp zstd -Xcompression-level 19 -b 1M
-mksquashfs "${rootfs}" "${squashfsimg}" -noappend -comp zstd -Xcompression-level 3 -b 1M
+mksquashfs "${rootfs}" "${squashfsimg}" -noappend -comp zstd -Xcompression-level 19 -b 1M
 sha512sum ${squashfsimg} >"${isofs}/${base}/${arch}/airootfs.sha512"
 
 

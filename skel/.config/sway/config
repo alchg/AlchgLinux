@@ -241,6 +241,7 @@ bindsym $mod+r mode "resize"
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 #    }
 #}
+font pango:IPAPGothic 12
 client.focused          #aaaaaa #555555 #ffffff #ffffff #555555
 
 include /etc/sway/config.d/*
