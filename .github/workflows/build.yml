@@ -43,6 +43,6 @@ jobs:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
             file: archlive/out/${{ env.FILE }}
             asset_name: ${{ env.FILE }}
-            tag: ${{ env.TAG }}
+            tag: latest
             overwrite: true
             body: "Auto Release."
