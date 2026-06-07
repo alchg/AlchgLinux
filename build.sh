@@ -72,7 +72,7 @@ pv
 memtest86+
 memtest86+-efi
 edk2-shell
-gzip
+glibc
 otf-ipafont
 otf-font-awesome
 fcitx5-im
