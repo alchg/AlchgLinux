@@ -303,7 +303,13 @@ timeout_style=menu
 
 menuentry "Arch Linux (${arch}, \${archiso_platform})" --class arch --class gnu-linux --class gnu --class os --id 'archlinux' {
     set gfxpayload=keep
-    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} archisosearchuuid=${uuid}
+    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} archisosearchuuid=${uuid} copytoram=n
+    initrd /${base}/boot/${arch}/initramfs-linux.img
+}
+
+menuentry "Arch Linux (${arch}, \${archiso_platform}, Copy to RAM)" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-ctr' {
+    set gfxpayload=keep
+    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} archisosearchuuid=${uuid} copytoram=y
     initrd /${base}/boot/${arch}/initramfs-linux.img
 }
 
@@ -376,7 +382,13 @@ timeout_style=menu
 
 menuentry "Arch Linux (${arch}, \${archiso_platform})" --class arch --class gnu-linux --class gnu --class os --id 'archlinux' {
     set gfxpayload=keep
-    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} img_dev=UUID=\${archiso_img_dev_uuid} img_loop="\${iso_path}"
+    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} img_dev=UUID=\${archiso_img_dev_uuid} img_loop="\${iso_path}" copytoram=n
+    initrd /${base}/boot/${arch}/initramfs-linux.img
+}
+
+menuentry "Arch Linux (${arch}, \${archiso_platform}, Copy to RAM)" --class arch --class gnu-linux --class gnu --class os --id 'archlinux-ctr' {
+    set gfxpayload=keep
+    linux /${base}/boot/${arch}/vmlinuz-linux archisobasedir=${base} img_dev=UUID=\${archiso_img_dev_uuid} img_loop="\${iso_path}" copytoram=y
     initrd /${base}/boot/${arch}/initramfs-linux.img
 }
 
