@@ -239,7 +239,6 @@
 			"shutdown": "poweroff",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate",
 			"logout": "swaymsg exit"
 		}
     }

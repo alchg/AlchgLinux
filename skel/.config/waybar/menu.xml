@@ -62,11 +62,6 @@
               </object>
             </child>
             <child>
-              <object class="GtkMenuItem" id="hibernate">
-                <property name="label">休止</property>
-              </object>
-            </child>
-            <child>
               <object class="GtkMenuItem" id="logout">
                 <property name="label">ログアウト</property>
               </object>
