@@ -147,7 +147,6 @@ EOF
 
 install -d -m 0755 -o 0 -g 0 -- "${rootfs}/home/user/"
 cp -r ../skel/. "${rootfs}/home/user/"
-find "${rootfs}/home/user/" |xargs -I {} chown user {}
 
 cat >"${rootfs}/etc/locale.conf"<<'EOF'
 LANG=C.UTF-8
@@ -216,6 +215,7 @@ ln -s /etc/systemd/system/startup.service ${rootfs}/etc/systemd/system/multi-use
 #sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' ${rootfs}/etc/locale.gen
 sed -i 's/#ja_JP.UTF-8 UTF-8/ja_JP.UTF-8 UTF-8/' ${rootfs}/etc/locale.gen
 eval -- env -u TMPDIR arch-chroot "${rootfs}" "locale-gen"
+eval -- env -u TMPDIR arch-chroot "${rootfs}" "chown -R user:1000 /home/user/"
 
 log_info "Done."
 
