@@ -47,12 +47,12 @@ output * bg ~/wallpaper/wallpaper11.jpg fill
 #
 # Example configuration:
 #
-#   input type:touchpad {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+   input type:touchpad {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+   }
 #
 #   input type:keyboard {
 #       xkb_layout "eu"
@@ -88,7 +88,9 @@ output * bg ~/wallpaper/wallpaper11.jpg fill
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    #bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec echo -e "シャットダウン" | wofi --dmenu -j -L 2 -W 300 | xargs -I {} sh -c '[ "{}" = "シャットダウン" ] && systemctl poweroff'
+
 #
 # Moving around:
 #
@@ -140,6 +142,10 @@ output * bg ~/wallpaper/wallpaper11.jpg fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    bindsym --border button4 workspace prev
+    bindsym --border button5 workspace next
+    bindsym button2 kill
 #
 # Layout stuff:
 #
