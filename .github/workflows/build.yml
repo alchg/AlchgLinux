@@ -19,12 +19,9 @@ jobs:
       options: --privileged
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Fix locale
+      - name: Fix for locale
         run: sed -i 's/^NoExtract/#NoExtract/' /etc/pacman.conf
-        
-      - name: Add user
-        run: useradd user
-        
+                
       - name: Install packages
         run: pacman -Syyu --noconfirm libisoburn mtools dosfstools squashfs-tools arch-install-scripts grub
      
@@ -46,7 +43,6 @@ jobs:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
             file: archlive/out/${{ env.FILE }}
             tag: ${{ env.TAG }}
-            overwrite: true
             body: "Scheduled update."
 
       - name: Upload sha256sum to release
@@ -55,5 +51,4 @@ jobs:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
             file: archlive/out/sha256sum.txt
             tag: ${{ env.TAG }}
-            overwrite: true
             body: "Scheduled update."
