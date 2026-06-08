@@ -2,13 +2,13 @@
 {
     // "layer": "top", // Waybar at top layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 26, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     //"spacing": 4, // Gaps between modules (4px)
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "custom/power",
+        "custom/menu",
         "custom/firefox",
         "custom/terminal",
         "sway/workspaces"
@@ -31,7 +31,7 @@
         //"keyboard-state",
         //"sway/language",
         "battery",
-        //"battery#bat2",
+        "battery#bat2",
         "pulseaudio",
         "tray",
         "clock"
@@ -223,12 +223,19 @@
         "tooltip": true,
         "tooltip-format": "Foot"
     },
-    "custom/power": {
-        "format" : "⏻",
+    "custom/menu": {
+        "format" : " &#xf039;",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-file": "$HOME/.config/waybar/menu.xml", // Menu file in resources folder
 		"menu-actions": {
+			"web_browser": "firefox",
+			"terminal": "foot",
+			"remote": "remote-viewer",
+
+			"screen": "wdisplays",
+			"input_method": "fcitx5-configtool",
+
 			"shutdown": "poweroff",
 			"reboot": "reboot",
 			"suspend": "systemctl suspend",

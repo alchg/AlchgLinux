@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <!-- ログアウトは最上位（1段目）に配置 -->
+    <child>
+      <object class="GtkMenuItem" id="web_browser">
+        <property name="label">ブラウザ</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="terminal">
+        <property name="label">端末</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="remote">
+        <property name="label">リモート接続</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuItem" id="config_options">
+        <property name="label">設定</property>
+
+        <child type="submenu">
+          <object class="GtkMenu" id="submenu_config">
+            <child>
+              <object class="GtkMenuItem" id="screen">
+                <property name="label">画面</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="input_method">
+                <property name="label">日本語入力</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuItem" id="exit_options">
+        <property name="label">終了</property>
+        
+        <child type="submenu">
+          <object class="GtkMenu" id="submenu_exit">
+            <child>
+              <object class="GtkMenuItem" id="shutdown">
+                <property name="label">電源オフ</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="reboot">
+                <property name="label">再起動</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="suspend">
+                <property name="label">省電力待機</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="hibernate">
+                <property name="label">休止</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="logout">
+                <property name="label">ログアウト</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </object>
+</interface>
+

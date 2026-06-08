@@ -5,12 +5,9 @@
 }
 
 #custom-firefox,
-#custom-terminal{
-    font-size: 18px;
-}
-
-#custom-power {
-    font-size: 25px;
+#custom-terminal,
+#custom-menu {
+    font-size: 22px;
 }
 
 window#waybar {
