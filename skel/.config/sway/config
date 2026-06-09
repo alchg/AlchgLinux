@@ -254,3 +254,6 @@ include /etc/sway/config.d/*
 exec fcitx5
 exec nm-applet
 exec waybar
+exec swayidle -w \
+	timeout 600 'swaymsg "output * power off"' \
+	resume 'swaymsg "output * power on"'

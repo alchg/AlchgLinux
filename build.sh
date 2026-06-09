@@ -82,6 +82,7 @@ pamixer
 networkmanager
 network-manager-applet
 sway
+swayidle
 swaybg
 waybar
 wofi
