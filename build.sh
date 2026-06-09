@@ -74,6 +74,7 @@ memtest86+-efi
 edk2-shell
 otf-ipafont
 otf-font-awesome
+brightnessctl
 fcitx5-im
 fcitx5-mozc
 pipewire

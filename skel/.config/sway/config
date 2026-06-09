@@ -50,7 +50,7 @@ output * bg ~/wallpaper/wallpaper11.jpg fill
    input type:touchpad {
        dwt enabled
        tap enabled
-       natural_scroll enabled
+#       natural_scroll enabled
        middle_emulation enabled
    }
 #
@@ -145,6 +145,8 @@ output * bg ~/wallpaper/wallpaper11.jpg fill
 
     bindsym --border button4 workspace prev
     bindsym --border button5 workspace next
+    bindsym $mod+z workspace prev
+    bindsym $mod+x workspace next
     bindsym button2 kill
 #
 # Layout stuff:
