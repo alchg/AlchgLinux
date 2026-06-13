@@ -250,7 +250,8 @@ bindsym $mod+r mode "resize"
 #    }
 #}
 font pango:IPAPGothic 12
-client.focused          #aaaaaa #555555 #ffffff #ffffff #555555
+client.focused          #aaaaaa #434859 #ffffff #ffffff #aaaaaa
+client.unfocused        #777777 #222222 #555555 #222222 #222222
 
 include /etc/sway/config.d/*
 exec fcitx5
