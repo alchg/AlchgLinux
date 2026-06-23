@@ -86,6 +86,7 @@ sway
 swayidle
 swaybg
 waybar
+python-gobject
 wofi
 wdisplays
 foot

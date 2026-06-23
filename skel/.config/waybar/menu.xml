@@ -34,6 +34,11 @@
                 <property name="label">日本語入力</property>
               </object>
             </child>
+            <child>
+              <object class="GtkMenuItem" id="wallpaper">
+                <property name="label">壁紙</property>
+              </object>
+            </child>
           </object>
         </child>
 

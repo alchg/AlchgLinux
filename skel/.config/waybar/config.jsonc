@@ -115,8 +115,9 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "{:%Y/%m/%d}\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%H:%M}"
+        //"tooltip-format": "{:%Y/%m/%d}\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:%Y-%m-%d %A}",
+	"format": "{:%m/%d %H:%M}"
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -238,6 +239,7 @@
 
 			"screen": "wdisplays",
 			"input_method": "fcitx5-configtool",
+			"wallpaper": "python $HOME/image-viewer.py $HOME/wallpaper/",
 
 			"shutdown": "poweroff",
 			"reboot": "reboot",
