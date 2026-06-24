@@ -72,6 +72,10 @@ pv
 memtest86+
 memtest86+-efi
 edk2-shell
+lvm2
+arch-install-scripts
+gptfdisk
+dosfstools
 otf-ipafont
 otf-font-awesome
 brightnessctl
@@ -101,7 +105,7 @@ install -d -m 0755 -o 0 -g 0 -- "${rootfs}"
 
 install -d -m 0755 -o 0 -g 0 -- "${rootfs}/etc/mkinitcpio.conf.d/"
 cat >"${rootfs}/etc/mkinitcpio.conf.d/archiso.conf"<<'EOF'
-HOOKS=(base udev modconf archiso block filesystems)
+HOOKS=(base udev modconf archiso block lvm2 filesystems)
 COMPRESSION="zstd"
 COMPRESSION_OPTIONS=(-19)
 EOF
