@@ -305,6 +305,7 @@ default=archlinux
 timeout=5
 timeout_style=menu
 
+sleep --interruptible 1
 
 # Menu entries
 
@@ -384,6 +385,7 @@ default=archlinux
 timeout=5
 timeout_style=menu
 
+sleep --interruptible 1
 
 # Menu entries
 
